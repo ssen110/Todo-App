@@ -1,0 +1,20 @@
+2023/06/08 13:39:36 http: panic serving [::1]:44978: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1854 +0xbf
+panic({0x6c1540, 0x933940})
+	/usr/local/go/src/runtime/panic.go:890 +0x263
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2951 +0x27
+github.com/ssen110/test/controllers.GetOneTodo({0x789050?, 0xc0000ae000}, 0xc000090180?)
+	/home/swaraj/github/todoapp/controllers/gettodo.go:63 +0x1e5
+net/http.HandlerFunc.ServeHTTP(0xc00009c200?, {0x789050?, 0xc0000ae000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2122 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0000000c0, {0x789050, 0xc0000ae000}, 0xc00009c100)
+	/home/swaraj/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x7881b8?}, {0x789050, 0xc0000ae000}, 0xc00009c100)
+	/usr/local/go/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00015c1b0, {0x789278, 0xc00010b410})
+	/usr/local/go/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3089 +0x5ed
